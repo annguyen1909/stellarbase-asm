@@ -1,0 +1,194 @@
+/**
+ * E-commerce Product Page Styles
+ * Designed to match the Nike product page screenshot
+ */
+
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Oxanium', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    line-height: 1.2;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-family: inherit;
+}
+
+input {
+    font-family: inherit;
+}
+
+/* Header Styles */
+.header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    z-index: 100;
+}
+
+.nav {
+    padding: 0 20px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo {
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+    letter-spacing: 1px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #000;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: opacity 0.2s;
+}
+
+.nav-link:hover {
+    opacity: 0.7;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search-btn,
+.account-link {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: #000;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.search-btn:hover,
+.account-link:hover {
+    opacity: 0.7;
+}
+
+.currency-select {
+    border: none;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    background: transparent;
+}
+
+.cart-btn {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    color: #000;
+    transition: opacity 0.2s;
+    position: relative;
+}
+
+.cart-btn:hover {
+    opacity: 0.7;
+}
+
+.cart-count {
+    background: #000;
+    color: #fff;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 10px;
+    margin-left: 5px;
+    min-width: 18px;
+    text-align: center;
+}
+
+/* Main Product Container */
+.product-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 60px;
+    align-items: start;
+}
+
+/* Product Images Section - 2x2 Grid */
+.product-images {
+    position: sticky;
+    top: 80px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 15px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.grid-image {
+    aspect-ratio: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grid-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.grid-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+}
+
+.grid-image:hover img {
+    transform: scale(1.05);
+}
