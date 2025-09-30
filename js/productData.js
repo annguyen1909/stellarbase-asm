@@ -10,13 +10,11 @@ const productData = {
     basePrice: 85.00,
     currency: 'NZD',
     
-    colors: [
-        {
-            name: 'BLACK',
-            value: 'black',
-            hex: '#000000'
-        }
-    ],
+    color: {
+        name: 'BLACK',
+        value: 'black',
+        hex: '#000000'
+    },
     
     sizes: ['S', 'M', 'L', 'XL'],
     
@@ -65,24 +63,24 @@ const productData = {
 };
 
 const ProductDataUtils = {
-    getVariant(color, size) {
+    getVariant(size) {
         return productData.variants.find(variant => 
-            variant.color === color && variant.size === size
+            variant.size === size
         ) || null;
     },
 
-    getColorData(colorValue) {
-        return productData.colors.find(color => color.value === colorValue) || null;
+    getColorData() {
+        return productData.color;
     },
 
-    isVariantAvailable(color, size) {
-        const variant = this.getVariant(color, size);
+    isVariantAvailable(size) {
+        const variant = this.getVariant(size);
         return variant && variant.stock > 0;
     },
 
-    getAvailableSizes(color) {
+    getAvailableSizes() {
         return productData.sizes.map(size => {
-            const variant = this.getVariant(color, size);
+            const variant = this.getVariant(size);
             return {
                 size: size,
                 available: variant && variant.stock > 0,
@@ -92,8 +90,8 @@ const ProductDataUtils = {
         });
     },
     
-    getMaxQuantity(color, size) {
-        const variant = this.getVariant(color, size);
+    getMaxQuantity(size) {
+        const variant = this.getVariant(size);
         return variant ? Math.min(variant.stock, 10) : 0; 
     },
     
