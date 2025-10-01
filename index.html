@@ -66,6 +66,102 @@
                 </div>
             </div>
         </section>
+        <section class="product-details">
+            <div class="product-info">
+                <!-- Brand and Title -->
+                <h2 class="product-brand">NIKE</h2>
+                <h1 class="product-title">NOCTA CARDINAL STOCK WOVEN SHORT</h1>
+                <div class="product-color">BLACK</div>
+                <div class="product-sku">SKU: <span id="productSku">468051</span></div>
+
+                <!-- Price Section -->
+                <div class="price-section">
+                    <span class="current-price" id="currentPrice">$85.00</span>
+                    <span class="original-price" id="originalPrice" style="display: none;">$100.00</span>
+                    <span class="sale-badge" id="saleBadge" style="display: none;">SALE</span>
+                </div>
+
+                <!-- Color Selector -->
+                <div class="selector-group">
+                    <label class="selector-label">COLOUR</label>
+                    <div class="color-options" id="colorOptions">
+                        <button class="color-option active" data-color="black" aria-label="Black">
+                            <span class="color-swatch" style="background-color: #000;"></span>
+                        </button>
+                        <button class="color-option" data-color="white" aria-label="White">
+                            <span class="color-swatch" style="background-color: #fff; border: 1px solid #ddd;"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Size Selector -->
+                <div class="selector-group">
+                    <label class="selector-label">SIZE</label>
+                    <div class="size-options" id="sizeOptions">
+                        <button class="size-option" data-size="S">S</button>
+                        <button class="size-option active" data-size="M">M</button>
+                        <button class="size-option" data-size="L">L</button>
+                        <button class="size-option" data-size="XL">XL</button>
+                    </div>
+                </div>
+
+                <!-- Quantity Selector -->
+                <div class="quantity-section">
+                    <label class="quantity-label">QUANTITY</label>
+                    <div class="quantity-controls">
+                        <button class="quantity-btn" id="decreaseQty" aria-label="Decrease quantity">−</button>
+                        <input type="number" class="quantity-input" id="quantityInput" value="1" min="1" max="10">
+                        <button class="quantity-btn" id="increaseQty" aria-label="Increase quantity">+</button>
+                    </div>
+                    <div class="stock-info" id="stockInfo">In Stock: <span id="stockCount">10</span></div>
+                </div>
+
+                <!-- Add to Cart Button -->
+                <button class="add-to-cart-btn" id="addToCartBtn">ADD TO CART</button>
+
+                <!-- Product Description -->
+                <div class="product-description">
+                    <button class="description-toggle" id="descriptionToggle">
+                        <span>DESCRIPTION</span>
+                        <span class="toggle-icon">⌄</span>
+                    </button>
+                    <div class="description-content" id="descriptionContent">
+                        <p>These premium shorts feature stretch fabric for comfort and mobility. Lightweight fabric
+                            moves sweat away from your skin for quick evaporation, helping you stay dry and
+                            comfortable. Designed to feel relaxed through the seat and thighs for a casual fit.</p>
+
+                        <h4>Fabrication</h4>
+                        <ul>
+                            <li>Body: 100% Nylon</li>
+                        </ul>
+
+                        <h4>Size & Fit</h4>
+                        <ul>
+                            <li>True to size</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Shipping and Returns -->
+                <div class="shipping-returns">
+                    <button class="toggle-section" id="shippingToggle">
+                        <span>SHIPPING</span>
+                        <span class="toggle-icon">⌄</span>
+                    </button>
+                    <div class="section-content" id="shippingContent" style="display: none;">
+                        <p>Free shipping on orders over $150 NZD</p>
+                    </div>
+
+                    <button class="toggle-section" id="returnsToggle">
+                        <span>RETURNS</span>
+                        <span class="toggle-icon">⌄</span>
+                    </button>
+                    <div class="section-content" id="returnsContent" style="display: none;">
+                        <p>30-day return policy for unworn items</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 </body>
 
 </html>
