@@ -92,7 +92,7 @@ const ProductDataUtils = {
     
     getMaxQuantity(size) {
         const variant = this.getVariant(size);
-        return variant ? Math.min(variant.stock, 10) : 0; 
+        return variant ? variant.stock : 0; 
     },
     
     formatPrice(price) {

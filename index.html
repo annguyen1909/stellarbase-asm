@@ -12,6 +12,24 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oxanium:wght@200..800&display=swap"
         rel="stylesheet">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "Nocta Cardinal Stock Woven Short",
+        "brand": {
+            "@type": "Brand",
+            "name": "Nike"
+        },
+        "description": "Premium shorts featuring stretch fabric for comfort and mobility. Lightweight fabric moves sweat away from your skin for quick evaporation.",
+        "offers": {
+            "@type": "Offer",
+            "price": "85.00",
+            "priceCurrency": "NZD",
+            "availability": "In Stock"
+        }
+    }
+    </script>
 </head>
 
 <body>
@@ -45,10 +63,6 @@
         </nav>
     </header>
 
-    <div class="breadcrumb">
-        <span>NEW ARRIVAL</span>
-    </div>
-
     <main class="product-container">
         <section class="product-images">
             <div class="image-grid">
@@ -80,18 +94,6 @@
                 </div>
 
                 <div class="selector-group">
-                    <label class="selector-label">COLOUR</label>
-                    <div class="color-options" id="colorOptions">
-                        <button class="color-option active" data-color="black" aria-label="Black">
-                            <span class="color-swatch" style="background-color: #000;"></span>
-                        </button>
-                        <button class="color-option" data-color="white" aria-label="White">
-                            <span class="color-swatch" style="background-color: #fff; border: 1px solid #ddd;"></span>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="selector-group">
                     <label class="selector-label">SIZE</label>
                     <div class="size-options" id="sizeOptions">
                         <button class="size-option" data-size="S">S</button>
@@ -105,7 +107,7 @@
                     <label class="quantity-label">QUANTITY</label>
                     <div class="quantity-controls">
                         <button class="quantity-btn" id="decreaseQty" aria-label="Decrease quantity">−</button>
-                        <input type="number" class="quantity-input" id="quantityInput" value="1" min="1" max="10">
+                        <input type="number" class="quantity-input" id="quantityInput" value="1" min="1">
                         <button class="quantity-btn" id="increaseQty" aria-label="Increase quantity">+</button>
                     </div>
                     <div class="stock-info" id="stockInfo">In Stock: <span id="stockCount">10</span></div>
@@ -114,9 +116,9 @@
                 <div class="product-description">
                     <button class="description-toggle" id="descriptionToggle">
                         <span>DESCRIPTION</span>
-                        <span class="toggle-icon">⌄</span>
+                        <span class="toggle-icon">⌃</span>
                     </button>
-                    <div class="description-content" id="descriptionContent">
+                    <div class="description-content open" id="descriptionContent">
                         <p>These premium shorts feature stretch fabric for comfort and mobility. Lightweight fabric
                             moves sweat away from your skin for quick evaporation, helping you stay dry and
                             comfortable. Designed to feel relaxed through the seat and thighs for a casual fit.</p>
@@ -138,7 +140,7 @@
                         <span>SHIPPING</span>
                         <span class="toggle-icon">⌄</span>
                     </button>
-                    <div class="section-content" id="shippingContent" style="display: none;">
+                    <div class="section-content" id="shippingContent">
                         <p>Free shipping on orders over $150 NZD</p>
                     </div>
 
@@ -146,12 +148,42 @@
                         <span>RETURNS</span>
                         <span class="toggle-icon">⌄</span>
                     </button>
-                    <div class="section-content" id="returnsContent" style="display: none;">
+                    <div class="section-content" id="returnsContent">
                         <p>30-day return policy for unworn items</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <div class="cart-sidebar" id="cartSidebar">
+            <div class="cart-overlay" id="cartOverlay"></div>
+            <div class="cart-panel">
+                <div class="cart-header">
+                    <h3>Shopping Cart</h3>
+                    <button class="cart-close" id="cartClose">×</button>
+                </div>
+                <div class="cart-content">
+                    <div class="cart-empty" id="cartEmpty" style="display: none;">
+                        <p>Your cart is empty</p>
+                    </div>
+                    <div class="cart-items" id="cartItems"></div>
+                </div>
+                <div class="cart-footer">
+                    <div class="cart-total">
+                        <div class="total-row">
+                            <span>Subtotal:</span>
+                            <span id="cartSubtotal">$0.00</span>
+                        </div>
+                    </div>
+                    <button class="checkout-btn" id="checkoutBtn" disabled>Checkout</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="toast" id="toast">
+            <span id="toastContent"></span>
+        </div>
+
         <script src="js/productData.js"></script>
         <script src="js/main.js"></script>
 </body>
